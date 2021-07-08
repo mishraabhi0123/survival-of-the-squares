@@ -21,12 +21,12 @@ def iterate(grid):
 
 
 GRID_SIZE = (100, 100)
-GRID = np.random.random(GRID_SIZE) > 0.95
+GRID = np.random.random(GRID_SIZE) > 0.9
 # print(GRID)
 
 while True:
   GRID = iterate(GRID)
   plt.imshow(GRID, cmap = 'gray')
   plt.show()
-  plt.pause(0.01)
+  plt.pause(0.02)
   plt.cla()
