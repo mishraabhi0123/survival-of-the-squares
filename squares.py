@@ -1,5 +1,5 @@
 import numpy as np 
-import time, os
+import time
 import matplotlib.pyplot as plt
 plt.ion()
 
@@ -10,7 +10,7 @@ def iterate(grid):
     for j in range(1, col-1):
       roi = grid[i-1:i+2,j-1:j+2]
       total = np.sum(roi) - grid[i,j]
-      if total == 3:
+      if total == 3 or total == 2:
         grid[i,j] = 1
       elif total > 3:
         grid[i,j] = 0
