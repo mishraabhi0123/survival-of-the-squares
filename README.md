@@ -1,10 +1,15 @@
 # survival-of-the-squares          
 
 ## RULES        
-rule 1: All white cells are alive                   
-rule 2: All black cells are dead                                 
-rule 3: Any live cell with two or three live neighbours lives on to the next generation.                                       
-rule 4: A cell is dead if it has less than 2 alive neighbours or more than 3 alive neighbours.                                  
+Any live cell with fewer than two live neighbours dies, as if by underpopulation.           
+Any live cell with two or three live neighbours lives on to the next generation.                   
+Any live cell with more than three live neighbours dies, as if by overpopulation.                     
+Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.                          
+These rules, which compare the behavior of the automaton to real life, can be condensed into the following:                 
+
+Any live cell with two or three live neighbours survives.                               
+Any dead cell with three live neighbours becomes a live cell.                                        
+All other live cells die in the next generation. Similarly, all other dead cells stay dead.                                                  
 
 let' get started!
 

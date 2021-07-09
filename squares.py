@@ -11,7 +11,7 @@ def iterate(grid):
       roi = grid[i-1:i+2,j-1:j+2]
       total = np.sum(roi) - grid[i,j]
       if total == 3 or total == 2:
-        grid[i,j] = 1
+        grid[i,j] = 1.1
       elif total > 3:
         grid[i,j] = 0
       elif total < 2:
@@ -20,13 +20,18 @@ def iterate(grid):
 
 
 
-GRID_SIZE = (100, 100)
-GRID = np.random.random(GRID_SIZE) > 0.9
-# print(GRID)
+GRID_SIZE = (50, 50)
+GRID = np.random.random(GRID_SIZE) > 0.5
 
 while True:
   GRID = iterate(GRID)
+  print(GRID)
   plt.imshow(GRID, cmap = 'gray')
   plt.show()
-  plt.pause(0.02)
+  plt.pause(0.01)
   plt.cla()
+  GRID = GRID == 1.1
+  print(GRID)
+  # break
+
+# plt.ioff()
